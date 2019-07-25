@@ -28,9 +28,16 @@ export async function validatePaths() {
         if (!checks.gamePathCorrect) { problematicSettings.push("game"); }
         if (!checks.sdkPathCorrect) { problematicSettings.push("SDK"); }
 
-        vscode.window.showWarningMessage(
-            `Xcom 2: ${problematicSettings.join(" and ")} path${problematicSettings.length > 1 ? "s are" : " is"} incorrect`
+        const userSelection = await vscode.window.showWarningMessage(
+            `Xcom 2: ${problematicSettings.join(" and ")} path${problematicSettings.length > 1 ? "s are" : " is"} incorrect`,
+            'Detect automatically'
         );
+
+        if (userSelection === 'Detect automatically') {
+            await guessPaths();
+        }
+    } else {
+        vscode.window.showInformationMessage("Xcom 2: both SDK and game paths are configured correctly");
     }
 }
 
@@ -76,6 +83,10 @@ export async function guessPaths() {
         if (!needGame && !needSdk) {
             break;
         }
+    }
+
+    if (needGame || needSdk) {
+        vscode.window.showWarningMessage(`Xcom 2: failed to automatically detect paths - please set them manually`);
     }
 }
 
