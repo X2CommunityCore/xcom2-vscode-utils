@@ -10,14 +10,30 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:xcom2.validatePaths"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "xcom2.validatePaths",
+				"title": "Validate paths",
+				"category": "Xcom 2"
+			}
+		],
+		"configuration":[
+			{
+				"title": "Xcom 2",
+				"properties": {
+					"xcom.highlander.sdkroot": {
+						"type": "string",
+						"description": "Absolute path to the SDK (should end with \"XCOM 2 War of the Chosen SDK\", no final slash)"
+					},
+					"xcom.highlander.gameroot": {
+						"type": "string",
+						"description": "Absolute path to the game (should end with \"XCOM 2\\XCom2-WarOfTheChosen\", no final slash)"
+					}
+				}
 			}
 		]
 	},
