@@ -10,7 +10,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:xcom2.validatePaths"
+		"onCommand:xcom2.validatePaths",
+		"onCommand:xcom2.guessPaths"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -19,9 +20,14 @@
 				"command": "xcom2.validatePaths",
 				"title": "Validate paths",
 				"category": "Xcom 2"
+			},
+			{
+				"command": "xcom2.guessPaths",
+				"title": "Guess paths",
+				"category": "Xcom 2"
 			}
 		],
-		"configuration":[
+		"configuration": [
 			{
 				"title": "Xcom 2",
 				"properties": {
@@ -54,5 +60,8 @@
 		"typescript": "^3.3.1",
 		"tslint": "^5.12.1",
 		"vscode-test": "^1.0.0-next.0"
+	},
+	"dependencies": {
+		"node-filter-async": "^1.1.3"
 	}
 }

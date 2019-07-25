@@ -10,6 +10,9 @@
     "typescript.tsc.autoDetect": "off",
     "cSpell.words": [
         "gameroot",
-        "sdkroot"
+        "logicaldisk",
+        "sdkroot",
+        "steamapps",
+        "wmic"
     ]
 }
