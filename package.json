@@ -11,7 +11,8 @@
 	],
 	"activationEvents": [
 		"onCommand:xcom2.validatePaths",
-		"onCommand:xcom2.guessPaths"
+		"onCommand:xcom2.guessPaths",
+		"onCommand:xcom2.runEditor"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -24,6 +25,11 @@
 			{
 				"command": "xcom2.guessPaths",
 				"title": "Guess paths",
+				"category": "Xcom 2"
+			},
+			{
+				"command": "xcom2.runEditor",
+				"title": "Open editor",
 				"category": "Xcom 2"
 			}
 		],

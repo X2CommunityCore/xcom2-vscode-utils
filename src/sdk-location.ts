@@ -90,6 +90,32 @@ export async function guessPaths() {
     }
 }
 
+////////////////////////////////
+/// Functions for other code ///
+////////////////////////////////
+
+export async function getValidSdkPath() : Promise<string | false> {
+    const extensionConfig = vscode.workspace.getConfiguration(extensionConfigRoot);
+    const sdkPath = <string>extensionConfig.get(sdkPathSettingPath);
+
+    if (await isSdkFolder(sdkPath)) {
+        return sdkPath;
+    }
+
+    return false;
+}
+
+export async function getValidGamePath() : Promise<string | false> {
+    const extensionConfig = vscode.workspace.getConfiguration(extensionConfigRoot);
+    const gamePath = <string>extensionConfig.get(gamePathSettingPath);
+
+    if (await isGameFolder(gamePath)) {
+        return gamePath;
+    }
+
+    return false;
+}
+
 ///////////////
 /// Helpers ///
 ///////////////
