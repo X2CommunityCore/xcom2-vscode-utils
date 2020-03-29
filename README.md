@@ -1,3 +1,10 @@
+# Project status
+
+This project is on indefinite hold as I (Xymanek) wait for [UnrealScript Language Service](https://github.com/EliotVU/UnrealScript-Language-Service)
+to reach daily usable state (so that I can switch to using vscode for daily modding).
+
+If you would like to contribute/use this extension, then you are welcome by all means - I will still be merging PRs.
+
 # xcom2-vscode-utils README
 
 This is the README for your extension "xcom2-vscode-utils". After writing up a brief description, we recommend including the following sections.
